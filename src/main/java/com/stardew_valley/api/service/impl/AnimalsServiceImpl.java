@@ -10,7 +10,7 @@ public class AnimalsServiceImpl implements AnimalsService {
 
     private final AnimalsRepository animalsRepository;
 
-    public AnimalsService(AnimalsRepository animalsRepository) {
+    public AnimalsServiceImpl(AnimalsRepository animalsRepository) {
         this.animalsRepository = animalsRepository;
     }
     
