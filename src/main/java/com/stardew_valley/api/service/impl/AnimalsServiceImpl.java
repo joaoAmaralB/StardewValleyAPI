@@ -1,7 +1,12 @@
-package com.stardew_valley.api.service;
+package com.stardew_valley.api.service.impl;
 
 import java.util.EmptyStackException;
+import java.util.List;
+import java.util.NoSuchElementException;
 
+import org.springframework.stereotype.Service;
+
+import com.stardew_valley.api.domain.model.Animals.Animals;
 import com.stardew_valley.api.domain.repository.AnimalsRepository;
 import com.stardew_valley.api.service.AnimalsService;
 
@@ -16,11 +21,11 @@ public class AnimalsServiceImpl implements AnimalsService {
     
     @Override
     public Animals findById(Long id) {
-        return animalsRepository.findById(id).orElseThrow(new NoSuchElementException("Cannot find the animal with id: "+id));
+        return animalsRepository.findById(id).orElseThrow(NoSuchElementException::new);
     }
 
     @Override
-    public Animals findAll() {
+    public List<Animals> findAll() {
         return animalsRepository.findAll();
     }
 

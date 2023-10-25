@@ -1,6 +1,10 @@
-package com.stardew_valley.api.domain.model;
+package com.stardew_valley.api.domain.model.Animals;
 
 import java.util.List;
+
+import com.stardew_valley.api.domain.model.Building;
+import com.stardew_valley.api.domain.model.BuyPrice;
+import com.stardew_valley.api.domain.model.SellPrice;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -24,47 +28,67 @@ public class Animals {
     @OneToMany
     private List<Products> products;
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
+
     public void setName(String name) {
         this.name = name;
     }
+
     public String getDescription() {
         return description;
     }
+
     public void setDescription(String description) {
         this.description = description;
     }
+
     public String getCare() {
         return care;
     }
+
     public void setCare(String care) {
         this.care = care;
     }
+
     public Building getBuilding() {
         return building;
     }
+
     public void setBuilding(Building building) {
         this.building = building;
     }
+
     public SellPrice getSellPrice() {
         return sellPrice;
     }
+
     public void setSellPrice(SellPrice sellPrice) {
         this.sellPrice = sellPrice;
     }
+
     public BuyPrice getBuyPrice() {
         return buyPrice;
     }
+
     public void setBuyPrice(BuyPrice buyPrice) {
         this.buyPrice = buyPrice;
     }
+
     public List<Products> getProducts() {
         return products;
     }
+
     public void setProducts(List<Products> products) {
         this.products = products;
     }
-
 }
