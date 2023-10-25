@@ -1,5 +1,7 @@
 package com.stardew_valley.api.domain.model;
 
+import com.stardew_valley.api.domain.model.Building;
+
 @Entity
 public class Villagers {
     @Id
@@ -8,7 +10,7 @@ public class Villagers {
     private String name;
     private String url;
     private Birthday birthday;
-    private String address;
+    private Building address;
     private Family family;
     private String description;
     private String schedule;

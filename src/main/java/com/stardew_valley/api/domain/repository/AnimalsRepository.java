@@ -7,5 +7,5 @@ import com.stardew_valley.api.domain.model.Animals;
 
 @Repository
 public interface AnimalsRepository extends JpaRepository<Animals, Long> {
-    
+    boolean existsByName(String name);
 }
