@@ -14,7 +14,9 @@ public class Tools {
     private String type;
     private String url;
     private String name;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private UppgradePrice uppgradePrice;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Ingredients ingredients;
     private String improvements;
     

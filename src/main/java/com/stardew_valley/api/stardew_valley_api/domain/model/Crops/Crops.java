@@ -22,6 +22,7 @@ public class Crops {
     
     private String season;
     private String description;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Stages stages;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Recipes> recipes;

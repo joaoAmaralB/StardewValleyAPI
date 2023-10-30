@@ -23,8 +23,11 @@ public class Animals {
     private String name;
     private String description;
     private String care;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Building building;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private SellPrice sellPrice;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private BuyPrice buyPrice;
 
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

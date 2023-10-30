@@ -28,7 +28,9 @@ public class Weapons {
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Stats> stats;
     private String location;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private SellPrice sellPrice;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private BuyPrice buyPrice;
     
     public Long getId() {

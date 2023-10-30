@@ -10,6 +10,7 @@ public class Family {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private Villagers relative;
     private String kinship;
     
