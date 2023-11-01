@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_villagers")
 public class Villagers {
@@ -23,9 +24,9 @@ public class Villagers {
     private String type;
     private String name;
     private String url;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private Birthday birthday;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private Building address;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Family> family;

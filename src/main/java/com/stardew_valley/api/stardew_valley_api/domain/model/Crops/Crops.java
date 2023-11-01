@@ -13,6 +13,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_crops")
 public class Crops {
@@ -22,7 +23,7 @@ public class Crops {
     
     private String season;
     private String description;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private Stages stages;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<Recipes> recipes;

@@ -1,9 +1,11 @@
 package com.stardew_valley.api.stardew_valley_api.domain.model.Tools;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 
 @Entity(name = "tb_tools")
 public class Tools {
@@ -14,9 +16,9 @@ public class Tools {
     private String type;
     private String url;
     private String name;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private UppgradePrice uppgradePrice;
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @OneToOne(cascade = CascadeType.ALL)
     private Ingredients ingredients;
     private String improvements;
     

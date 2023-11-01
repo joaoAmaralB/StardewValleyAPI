@@ -12,7 +12,7 @@ public abstract class Price {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
-    private Double value;
+    private String value;
     private String url;
     
     public Long getId() {
@@ -21,10 +21,10 @@ public abstract class Price {
     public void setId(Long id) {
         this.id = id;
     }
-    public Double getValue() {
+    public String getValue() {
         return value;
     }
-    public void setValue(Double value) {
+    public void setValue(String value) {
         this.value = value;
     }
     public String getUrl() {
@@ -33,4 +33,5 @@ public abstract class Price {
     public void setUrl(String url) {
         this.url = url;
     }
+
 }
