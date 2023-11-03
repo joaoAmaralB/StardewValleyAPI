@@ -21,6 +21,8 @@ public class Crops {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
+    private String name;
+    private String growTime;
     private String season;
     private String description;
     @OneToOne(cascade = CascadeType.ALL)
@@ -30,17 +32,29 @@ public class Crops {
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SellPrice> sellPrices;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Villagers> lovedBy;
+    private List<Long> lovedBy;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Villagers> hatedBy;
+    private List<Long> hatedBy;
     @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    private List<Villagers> neutralBy;
+    private List<Long> neutralBy;
 
     public Long getId() {
         return id;
     }
     public void setId(Long id) {
         this.id = id;
+    }
+    public String getName() {
+        return name;
+    }
+    public void setName(String name) {
+        this.name = name;
+    }
+    public String getGrowTime() {
+        return growTime;
+    }
+    public void setGrowTime(String growTime) {
+        this.growTime = growTime;
     }
     public String getSeason() {
         return season;
@@ -72,22 +86,22 @@ public class Crops {
     public void setSellPrices(List<SellPrice> sellPrices) {
         this.sellPrices = sellPrices;
     }
-    public List<Villagers> getLovedBy() {
+    public List<Long> getLovedBy() {
         return lovedBy;
     }
-    public void setLovedBy(List<Villagers> lovedBy) {
+    public void setLovedBy(List<Long> lovedBy) {
         this.lovedBy = lovedBy;
     }
-    public List<Villagers> getHatedBy() {
+    public List<Long> getHatedBy() {
         return hatedBy;
     }
-    public void setHatedBy(List<Villagers> hatedBy) {
+    public void setHatedBy(List<Long> hatedBy) {
         this.hatedBy = hatedBy;
     }
-    public List<Villagers> getNeutralBy() {
+    public List<Long> getNeutralBy() {
         return neutralBy;
     }
-    public void setNeutralBy(List<Villagers> neutralBy) {
+    public void setNeutralBy(List<Long> neutralBy) {
         this.neutralBy = neutralBy;
     }
 }
