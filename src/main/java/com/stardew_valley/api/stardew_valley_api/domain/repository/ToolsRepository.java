@@ -7,5 +7,5 @@ import com.stardew_valley.api.stardew_valley_api.domain.model.Tools.Tools;
 
 @Repository
 public interface ToolsRepository extends JpaRepository<Tools, Long> {
-    
+    boolean existsByName(String name);
 }

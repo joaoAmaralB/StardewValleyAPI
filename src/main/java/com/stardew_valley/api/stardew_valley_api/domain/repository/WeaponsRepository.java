@@ -7,5 +7,5 @@ import com.stardew_valley.api.stardew_valley_api.domain.model.Weapons.Weapons;
 
 @Repository
 public interface WeaponsRepository extends JpaRepository<Weapons, Long> {
-    
+    boolean existsByName(String name);
 }

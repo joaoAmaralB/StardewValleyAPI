@@ -3,15 +3,17 @@ package com.stardew_valley.api.stardew_valley_api.domain.model.Crops;
 import java.util.List;
 
 import com.stardew_valley.api.stardew_valley_api.domain.model.SellPrice;
-import com.stardew_valley.api.stardew_valley_api.domain.model.Villagers.Villagers;
 
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.CollectionTable;
+import jakarta.persistence.Column;
+import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
+import jakarta.persistence.JoinColumn;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 
@@ -31,11 +33,17 @@ public class Crops {
     private List<Recipes> recipes;
     @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
     private List<SellPrice> sellPrices;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ElementCollection
+    @CollectionTable(name = "crops_loved_by", joinColumns = @JoinColumn(name = "crops_id"))
+    @Column(name = "villager_id")
     private List<Long> lovedBy;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ElementCollection
+    @CollectionTable(name = "crops_hated_by", joinColumns = @JoinColumn(name = "crops_id"))
+    @Column(name = "villager_id")
     private List<Long> hatedBy;
-    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)
+    @ElementCollection
+    @CollectionTable(name = "crops_neutral_by", joinColumns = @JoinColumn(name = "crops_id"))
+    @Column(name = "villager_id")
     private List<Long> neutralBy;
 
     public Long getId() {

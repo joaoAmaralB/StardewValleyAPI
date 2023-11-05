@@ -5,17 +5,11 @@ import java.util.List;
 import com.stardew_valley.api.stardew_valley_api.domain.model.BuyPrice;
 import com.stardew_valley.api.stardew_valley_api.domain.model.SellPrice;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.FetchType;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.ManyToMany;
-import jakarta.persistence.OneToOne;
+import jakarta.persistence.*;
 
 @Entity(name = "tb_weapons")
 public class Weapons {
+    
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
